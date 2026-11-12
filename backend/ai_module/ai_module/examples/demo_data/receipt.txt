@@ -1,0 +1,7 @@
+SONICWAVE STORE - Receipt
+Order #ORD-DEMO-2026
+Date: November 6, 2026
+Product: SonicWave Pro Wireless Headphones (model SW-PRO-X)
+Quantity: 1
+Total: $49.99
+Payment: card ending 1234

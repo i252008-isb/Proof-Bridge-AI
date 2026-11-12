@@ -1,0 +1,75 @@
+# ProofBridge AI — AI Module
+
+AI-powered **customer support & refund investigation** for the ProofBridge
+platform. Central principle: *customers submit the proof, ProofBridge AI
+investigates the proof, human support agents make the final decisions.*
+
+The module is independent of the backend (no database access, no auth,
+no payments) and exposes a stable integration surface consumed by the
+FastAPI backend.
+
+## Quick start
+
+```bash
+pip install -e "ai_module[ocr]"          # OCR extra is optional (Tesseract)
+python -m pytest tests/ -q               # offline tests, no API keys needed
+PROOFBRIDGE_DEMO_MODE=true python examples/run_demo.py   # offline demo
+```
+
+## What it does
+
+1. **Ticket understanding** — issue type and structured customer claims
+   (always `unverified` until evidence supports them).
+2. **Evidence processing** — receipts, order records, product images and
+   listings, seller conversations, delivery records (OCR for images and
+   scans; per-item error isolation).
+3. **Vision AI** — visible-damage inspection and listing-vs-photo
+   comparison, with honest limitations (a photo cannot establish cause
+   or timing).
+4. **Policy evaluation** — refund policy extraction (verbatim source
+   quotes only) and rule-by-rule assessment.
+5. **Cross-source verification** — order IDs, dates, prices, currency,
+   and quantity compared across sources; factual contradictions.
+6. **Recommendation** — fully reasoned, traceable, never definitive:
+   `refund_recommended`, `request_more_information`,
+   `escalate_to_human`, `refund_not_supported_by_provided_policy`,
+   `alternative_resolution_suggested`, `insufficient_policy_information`.
+7. **Investigation report** — 21-section structured report with
+   `human_review_required` and a final-decision notice.
+
+## Public API (for Person 2)
+
+```python
+from proofbridge_ai import (
+    extract_document, extract_ticket_claims, extract_evidence,
+    extract_evidence_batch, analyze_visual_evidence,
+    extract_refund_policy, compare_support_evidence,
+    analyze_support_case, arun_support_case_analysis,
+    generate_investigation_report,
+)
+
+analysis = await analyze_support_case(ticket, evidence_items,
+                                      refund_policy=policy,
+                                      order_information=order)
+report = generate_investigation_report(analysis, ticket, evidence_items)
+payload = report.model_dump(mode="json")
+```
+
+Full contract: [docs/ai/API_CONTRACT.md](docs/ai/API_CONTRACT.md).
+Integration guide: [docs/ai/INTEGRATION_GUIDE.md](docs/ai/INTEGRATION_GUIDE.md).
+Working FastAPI reference: [examples/fastapi_integration.py](examples/fastapi_integration.py).
+
+## Documentation
+
+See [docs/ai/README.md](docs/ai/README.md) for the index (architecture,
+schemas, configuration, error handling, limitations, OCR/vision setup,
+policy evaluation, testing, demo guide, handoff checklist).
+
+## Guardrails
+
+- Never issues, rejects, or transfers payments; never calls PayPal APIs.
+- Never invents policies, timestamps, or document facts.
+- Never overwrites human-corrected backend data.
+- Never makes fraud accusations; contradictions are stated factually.
+- Mock/AI-fallback output is always explicitly labeled.
+- All errors derive from `ProofBridgeAIError`.

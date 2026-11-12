@@ -1,0 +1,1 @@
+Get-CimInstance Win32_Process -Filter "Name='chrome.exe' OR Name='msedge.exe' OR Name='chromium.exe'" | Select-Object ProcessId, @{N='Cmd';E={$_.CommandLine.Substring(0, [Math]::Min(400, $_.CommandLine.Length))}} | Format-List | Out-String -Width 500

@@ -1,0 +1,29 @@
+# Runtime-only dependencies for a production deployment.
+# Install from the repository root:
+#   pip install -r requirements-prod.txt
+#
+# For tests and local development use requirements.txt +
+# requirements-ai.txt instead.
+
+fastapi==0.162.2
+uvicorn==0.54.0
+SQLAlchemy==2.1.8
+pydantic==2.14.3
+pydantic-settings==2.16.2
+PyJWT==2.15.1
+bcrypt==5.0.0
+email-validator==2.3.0
+httpx==0.28.1
+python-dotenv==1.2.4
+python-multipart==0.0.33
+
+# Person 3 AI module and its pinned runtime dependencies.
+numpy==2.5.4
+PyMuPDF==2.1
+python-docx==1.2.0
+Pillow==13.0.0
+./ai_module/ai_module
+
+# PostgreSQL driver (optional). Uncomment only when DATABASE_URL points to
+# PostgreSQL; SQLite deployments do not need it.
+# psycopg[binary]>=3.2,<4

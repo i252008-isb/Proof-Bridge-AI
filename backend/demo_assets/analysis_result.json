@@ -1,0 +1,555 @@
+{
+  "kind": "project_ai_analysis",
+  "schema_version": "1.1",
+  "status": "completed",
+  "project_id": 2,
+  "case_id": "project-2",
+  "generated_at": "2026-11-12T16:39:06.939544Z",
+  "ai_package_version": "0.2.0",
+  "human_review_required": true,
+  "final_decision_notice": "This is an AI-generated investigation recommendation. An authorized human support agent must make the final decision.",
+  "provider_modes": {
+    "llm": "mock",
+    "embeddings": "mock",
+    "vision": "unused",
+    "ocr": "disabled"
+  },
+  "external_processing": false,
+  "input_fingerprint": "391544917b181f5f1a984325fad5ea21f6974fd91ae49c67d56033d5d6ab6ba4",
+  "input_summary": {
+    "requirement_ids": [
+      1,
+      2,
+      3
+    ],
+    "evidence_ids": [
+      1,
+      2
+    ],
+    "skipped_evidence_ids": [],
+    "evidence_files_processed": 2
+  },
+  "integration_warnings": [],
+  "requirement_findings": [
+    {
+      "requirement_id": 1,
+      "requirement_text": "Order #PB-1042 was placed on March 14, 2026 for a wireless charging pad that never arrived.",
+      "status": "supported",
+      "confidence": 1.0,
+      "rationale": "The order number stated in this claim (PB-1042) matches the order number found in the supplied documents.",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "cited_evidence_ids": [],
+      "analysis_method": "heuristic",
+      "source_kind": "heuristic",
+      "requires_human_review": true
+    },
+    {
+      "requirement_id": 2,
+      "requirement_text": "I was charged twice for order #PB-9999 on my credit card.",
+      "status": "contradicted",
+      "confidence": 1.0,
+      "rationale": "The order number stated in this claim (PB-9999) does not match the order number(s) found in the supplied documents (PB-1042). This inconsistency is reported factually.",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "cited_evidence_ids": [],
+      "analysis_method": "heuristic",
+      "source_kind": "heuristic",
+      "requires_human_review": true
+    },
+    {
+      "requirement_id": 3,
+      "requirement_text": "The package that did arrive was shipped to the wrong address and arrived two weeks late.",
+      "status": "unverified",
+      "confidence": 1.0,
+      "rationale": "Relevant evidence exists, but it does not independently confirm this claim.",
+      "supporting_evidence_ids": [
+        2
+      ],
+      "contradicting_evidence_ids": [],
+      "cited_evidence_ids": [],
+      "analysis_method": "heuristic",
+      "source_kind": "heuristic",
+      "requires_human_review": true
+    }
+  ],
+  "comparison": {
+    "verified_requirement_ids": [
+      1
+    ],
+    "supported_requirement_ids": [
+      1
+    ],
+    "partially_supported_requirement_ids": [],
+    "unverified_requirement_ids": [
+      3
+    ],
+    "insufficient_evidence_requirement_ids": [],
+    "contradicted_requirement_ids": [
+      2
+    ],
+    "missing_evidence_requirement_ids": [],
+    "uncertain_requirement_ids": [
+      3
+    ],
+    "human_attention_requirement_ids": [
+      3,
+      2
+    ],
+    "evidence_needing_attention_ids": []
+  },
+  "analysis_result_ids": [
+    1,
+    2,
+    3
+  ],
+  "analysis": {
+    "schema_version": "2.0",
+    "case_id": "project-2",
+    "generated_at": "2026-11-12T16:39:06.937363Z",
+    "issue_type": "delivery_complaint",
+    "requested_resolution": "",
+    "customer_claim_summary": "Customer reports that order #PB-1042 never arrived and that their credit card was charged twice for the purchase.",
+    "claims": [
+      {
+        "claim_id": "requirement-1",
+        "claim": "Order #PB-1042 was placed on March 14, 2026 for a wireless charging pad that never arrived.",
+        "source": "project_requirement",
+        "status": "supported",
+        "confidence": 1.0,
+        "rationale": "The order number stated in this claim (PB-1042) matches the order number found in the supplied documents.",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "cited_passages": [],
+        "similarity_scores": [
+          {
+            "evidence_id": "evidence-1",
+            "score": 0.5026,
+            "method": "embeddings"
+          },
+          {
+            "evidence_id": "evidence-2",
+            "score": 0.2356,
+            "method": "embeddings"
+          }
+        ],
+        "analysis_method": "heuristic",
+        "requires_human_review": true,
+        "source_kind": "heuristic"
+      },
+      {
+        "claim_id": "requirement-2",
+        "claim": "I was charged twice for order #PB-9999 on my credit card.",
+        "source": "project_requirement",
+        "status": "contradicted",
+        "confidence": 1.0,
+        "rationale": "The order number stated in this claim (PB-9999) does not match the order number(s) found in the supplied documents (PB-1042). This inconsistency is reported factually.",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "cited_passages": [],
+        "similarity_scores": [
+          {
+            "evidence_id": "evidence-1",
+            "score": 0.3278,
+            "method": "embeddings"
+          },
+          {
+            "evidence_id": "evidence-2",
+            "score": 0.1756,
+            "method": "embeddings"
+          }
+        ],
+        "analysis_method": "heuristic",
+        "requires_human_review": true,
+        "source_kind": "heuristic"
+      },
+      {
+        "claim_id": "requirement-3",
+        "claim": "The package that did arrive was shipped to the wrong address and arrived two weeks late.",
+        "source": "project_requirement",
+        "status": "unverified",
+        "confidence": 1.0,
+        "rationale": "Relevant evidence exists, but it does not independently confirm this claim.",
+        "supporting_evidence_ids": [
+          "evidence-2"
+        ],
+        "contradicting_evidence_ids": [],
+        "cited_passages": [],
+        "similarity_scores": [
+          {
+            "evidence_id": "evidence-2",
+            "score": 0.6093,
+            "method": "embeddings"
+          },
+          {
+            "evidence_id": "evidence-1",
+            "score": 0.0765,
+            "method": "embeddings"
+          }
+        ],
+        "analysis_method": "heuristic",
+        "requires_human_review": true,
+        "source_kind": "heuristic"
+      }
+    ],
+    "purchase_information": [
+      {
+        "evidence_id": "evidence-1",
+        "seller_name": null,
+        "product_name": null,
+        "product_model": null,
+        "order_number": "PB-1042",
+        "purchase_date": "2026-03-14T00:00:00",
+        "price": 29.99,
+        "currency": "USD",
+        "quantity": 1,
+        "extraction_warnings": []
+      }
+    ],
+    "visual_analysis": [],
+    "conversation_analysis": [],
+    "cross_source_findings": [],
+    "contradictions": [],
+    "missing_information": [
+      {
+        "id": "missing-policy-1",
+        "description": "The seller's refund/return policy was not supplied.",
+        "recommended_evidence": [
+          "Additional policy documentation"
+        ]
+      }
+    ],
+    "policy_evaluation": {
+      "policy_id": null,
+      "policy_name": null,
+      "status": "policy_not_provided",
+      "rule_assessments": [],
+      "unmet_conditions": [],
+      "missing_information": [
+        "The seller's refund/return policy was not supplied."
+      ],
+      "warnings": [
+        {
+          "code": "policy_not_provided",
+          "message": "No refund policy was supplied for this case; no policy conditions could be evaluated.",
+          "page_number": null
+        }
+      ],
+      "explanation": "No seller refund policy was supplied, so no policy conditions could be evaluated. A human support agent must decide how to handle this case.",
+      "requires_human_review": true
+    },
+    "recommendation": {
+      "outcome": "insufficient_policy_information",
+      "reasoning": "No refund policy was supplied, so the AI cannot evaluate whether the case meets any refund conditions.",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "missing_information": [
+        "The seller's refund/return policy was not supplied."
+      ],
+      "relevant_policy_rule_ids": [],
+      "confidence": 0.5,
+      "requires_human_review": true
+    },
+    "limitations": [
+      "The configured LLM provider is a mock: LLM-based extractions and summaries are deterministic heuristics, not model output.",
+      "Relevance scores were computed with the mock embeddings provider: they are deterministic approximations, not genuine semantic analysis."
+    ],
+    "requires_human_review": true,
+    "source_summary": {
+      "llm_count": 0,
+      "heuristic_count": 3
+    }
+  },
+  "report": {
+    "schema_version": "2.0",
+    "case_id": "project-2",
+    "report_title": "ProofBridge AI \u2014 Customer Support Case Investigation Report",
+    "generated_at": "2026-11-12T16:39:06.939544Z",
+    "case_overview": {
+      "case_id": "project-2",
+      "issue_type": "delivery_complaint",
+      "product_name": "Smartphone Charger Order #PB-1042",
+      "requested_resolution": "",
+      "complaint_summary": "Customer reports that order #PB-1042 never arrived and that their credit card was charged twice for the purchase.",
+      "created_at": "2026-11-12T16:39:05.236647"
+    },
+    "customer_complaint": "Customer reports that order #PB-1042 never arrived and that their credit card was charged twice for the purchase.",
+    "product_information": "Product: Smartphone Charger Order #PB-1042",
+    "requested_resolution": "",
+    "customer_claims": [
+      {
+        "id": "requirement-1",
+        "claim": "Order #PB-1042 was placed on March 14, 2026 for a wireless charging pad that never arrived.",
+        "source": "project_requirement",
+        "verification_status": "supported",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "rationale": "The order number stated in this claim (PB-1042) matches the order number found in the supplied documents."
+      },
+      {
+        "id": "requirement-2",
+        "claim": "I was charged twice for order #PB-9999 on my credit card.",
+        "source": "project_requirement",
+        "verification_status": "contradicted",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "rationale": "The order number stated in this claim (PB-9999) does not match the order number(s) found in the supplied documents (PB-1042). This inconsistency is reported factually."
+      },
+      {
+        "id": "requirement-3",
+        "claim": "The package that did arrive was shipped to the wrong address and arrived two weeks late.",
+        "source": "project_requirement",
+        "verification_status": "unverified",
+        "supporting_evidence_ids": [
+          "evidence-2"
+        ],
+        "contradicting_evidence_ids": [],
+        "rationale": "Relevant evidence exists, but it does not independently confirm this claim."
+      }
+    ],
+    "purchase_and_order_information": [
+      {
+        "evidence_id": "evidence-1",
+        "seller_name": null,
+        "product_name": null,
+        "product_model": null,
+        "order_number": "PB-1042",
+        "purchase_date": "2026-03-14T00:00:00",
+        "price": 29.99,
+        "currency": "USD",
+        "quantity": 1,
+        "extraction_warnings": []
+      }
+    ],
+    "order_information": null,
+    "payment_information": null,
+    "evidence_inventory": [
+      {
+        "evidence_id": "evidence-1",
+        "filename": "order-confirmation-PB-1042.pdf",
+        "kind": "pdf",
+        "status": "processed",
+        "category": "order_record",
+        "evidence_type": "uploaded_evidence",
+        "uploaded_by": "6",
+        "uploaded_at": "2026-11-12T16:39:05.931429",
+        "summary": "PDF evidence: extracted text begins: \"PROOFBRIDGE MARKETPLACE\nOrder Confirmation\nOrder #PB-1042\nDate: March 14, 2026\nItem: Wireless Charging Pad, Qty 1\nPrice: $29.99 USD\nPayment: Credit Card\nSeller: TechGear Store\nShipping Address: 42 ...\"",
+        "identified_facts": [
+          "Contains an invoice/reference number: Order #PB-1042",
+          "Contains a date: March 14, 2026",
+          "Contains a currency amount: $29.99",
+          "PDF with 1 page"
+        ],
+        "extraction_warning_codes": []
+      },
+      {
+        "evidence_id": "evidence-2",
+        "filename": "shipping-delivery-note.pdf",
+        "kind": "pdf",
+        "status": "processed",
+        "category": "delivery_record",
+        "evidence_type": "uploaded_evidence",
+        "uploaded_by": "6",
+        "uploaded_at": "2026-11-12T16:39:06.003226",
+        "summary": "PDF evidence: extracted text begins: \"COURIER DELIVERY NOTE\nShipment for Order #PB-1042\nStatus: Delivered\nNote: The package was shipped to the wrong address and arrived two weeks late.\nDelivered To: 7 Elm Avenue\nCarrier: FastShip Express\"",
+        "identified_facts": [
+          "Contains an invoice/reference number: Order #PB-1042",
+          "PDF with 1 page"
+        ],
+        "extraction_warning_codes": []
+      }
+    ],
+    "ocr_findings": [],
+    "visual_analysis": [],
+    "conversation_analysis": [],
+    "refund_policy_summary": null,
+    "cross_source_verification": [],
+    "supporting_findings": [
+      {
+        "claim_id": "requirement-1",
+        "claim": "Order #PB-1042 was placed on March 14, 2026 for a wireless charging pad that never arrived.",
+        "source": "project_requirement",
+        "status": "supported",
+        "confidence": 1.0,
+        "rationale": "The order number stated in this claim (PB-1042) matches the order number found in the supplied documents.",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "cited_passages": [],
+        "similarity_scores": [
+          {
+            "evidence_id": "evidence-1",
+            "score": 0.5026,
+            "method": "embeddings"
+          },
+          {
+            "evidence_id": "evidence-2",
+            "score": 0.2356,
+            "method": "embeddings"
+          }
+        ],
+        "analysis_method": "heuristic",
+        "requires_human_review": true,
+        "source_kind": "heuristic"
+      },
+      {
+        "claim_id": "requirement-2",
+        "claim": "I was charged twice for order #PB-9999 on my credit card.",
+        "source": "project_requirement",
+        "status": "contradicted",
+        "confidence": 1.0,
+        "rationale": "The order number stated in this claim (PB-9999) does not match the order number(s) found in the supplied documents (PB-1042). This inconsistency is reported factually.",
+        "supporting_evidence_ids": [],
+        "contradicting_evidence_ids": [],
+        "cited_passages": [],
+        "similarity_scores": [
+          {
+            "evidence_id": "evidence-1",
+            "score": 0.3278,
+            "method": "embeddings"
+          },
+          {
+            "evidence_id": "evidence-2",
+            "score": 0.1756,
+            "method": "embeddings"
+          }
+        ],
+        "analysis_method": "heuristic",
+        "requires_human_review": true,
+        "source_kind": "heuristic"
+      },
+      {
+        "claim_id": "requirement-3",
+        "claim": "The package that did arrive was shipped to the wrong address and arrived two weeks late.",
+        "source": "project_requirement",
+        "status": "unverified",
+        "confidence": 1.0,
+        "rationale": "Relevant evidence exists, but it does not independently confirm this claim.",
+        "supporting_evidence_ids": [
+          "evidence-2"
+        ],
+        "contradicting_evidence_ids": [],
+        "cited_passages": [],
+        "similarity_scores": [
+          {
+            "evidence_id": "evidence-2",
+            "score": 0.6093,
+            "method": "embeddings"
+          },
+          {
+            "evidence_id": "evidence-1",
+            "score": 0.0765,
+            "method": "embeddings"
+          }
+        ],
+        "analysis_method": "heuristic",
+        "requires_human_review": true,
+        "source_kind": "heuristic"
+      }
+    ],
+    "contradictions": [],
+    "missing_information": [
+      {
+        "id": "missing-policy-1",
+        "description": "The seller's refund/return policy was not supplied.",
+        "recommended_evidence": [
+          "Additional policy documentation"
+        ]
+      }
+    ],
+    "policy_assessment": {
+      "policy_id": null,
+      "policy_name": null,
+      "status": "policy_not_provided",
+      "rule_assessments": [],
+      "unmet_conditions": [],
+      "missing_information": [
+        "The seller's refund/return policy was not supplied."
+      ],
+      "warnings": [
+        {
+          "code": "policy_not_provided",
+          "message": "No refund policy was supplied for this case; no policy conditions could be evaluated.",
+          "page_number": null
+        }
+      ],
+      "explanation": "No seller refund policy was supplied, so no policy conditions could be evaluated. A human support agent must decide how to handle this case.",
+      "requires_human_review": true
+    },
+    "recommended_outcome": "insufficient_policy_information",
+    "recommendation_reasoning": "No refund policy was supplied, so the AI cannot evaluate whether the case meets any refund conditions.",
+    "recommendation": {
+      "outcome": "insufficient_policy_information",
+      "reasoning": "No refund policy was supplied, so the AI cannot evaluate whether the case meets any refund conditions.",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "missing_information": [
+        "The seller's refund/return policy was not supplied."
+      ],
+      "relevant_policy_rule_ids": [],
+      "confidence": 0.5,
+      "requires_human_review": true
+    },
+    "evidence_references": [
+      "evidence-1 \u2014 order-confirmation-PB-1042.pdf",
+      "evidence-2 \u2014 shipping-delivery-note.pdf"
+    ],
+    "timeline": [
+      {
+        "event_type": "project_created",
+        "description": "Project 2 was created.",
+        "timestamp": "2026-11-12T16:39:05.236647",
+        "source": "backend"
+      },
+      {
+        "event_type": "project_status_changed",
+        "description": "Project status changed to created. Note: Project created.",
+        "timestamp": "2026-11-12T16:39:05.244845",
+        "source": "backend"
+      },
+      {
+        "event_type": "project_status_changed",
+        "description": "Project status changed to created. Note: Agreement file uploaded.",
+        "timestamp": "2026-11-12T16:39:05.372424",
+        "source": "backend"
+      },
+      {
+        "event_type": "project_status_changed",
+        "description": "Project status changed to in_progress. Note: Order marked in progress.",
+        "timestamp": "2026-11-12T16:39:05.735585",
+        "source": "backend"
+      },
+      {
+        "event_type": "evidence_uploaded",
+        "description": "Evidence 'evidence-1' (order-confirmation-PB-1042.pdf) was uploaded.",
+        "timestamp": "2026-11-12T16:39:05.931429",
+        "source": "evidence:evidence-1"
+      },
+      {
+        "event_type": "evidence_uploaded",
+        "description": "Evidence 'evidence-2' (shipping-delivery-note.pdf) was uploaded.",
+        "timestamp": "2026-11-12T16:39:06.003226",
+        "source": "evidence:evidence-2"
+      }
+    ],
+    "neutral_summary": "Case project-2: the customer reported issue type delivery_complaint and requested no specific resolution. 2 evidence item(s) were analyzed; 0 contradiction(s) and 1 missing-information item(s) were identified. Recommended outcome: insufficient_policy_information. A human support agent must make the final decision.",
+    "limitations": [
+      "The configured LLM provider is a mock: LLM-based extractions and summaries are deterministic heuristics, not model output.",
+      "Relevance scores were computed with the mock embeddings provider: they are deterministic approximations, not genuine semantic analysis."
+    ],
+    "human_review_required": true,
+    "final_decision_notice": "This is an AI-generated investigation recommendation. An authorized human support agent must make the final decision.",
+    "status_counts": {
+      "supported": 1,
+      "contradicted": 1,
+      "unverified": 1
+    },
+    "unresolved_evidence_ids": [],
+    "source_summary": {
+      "llm_count": 0,
+      "heuristic_count": 3
+    },
+    "generation_method": "heuristic"
+  },
+  "report_id": 1,
+  "created_at": "2026-11-12T16:39:06.947929"
+}

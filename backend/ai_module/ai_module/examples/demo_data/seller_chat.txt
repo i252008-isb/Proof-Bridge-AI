@@ -1,0 +1,4 @@
+customer: Hi, my headphones arrived and the left ear cup is cracked.
+seller: Hello! Sorry to hear that. Could you send a photo of the damage?
+customer: Sure, photo attached.
+seller: Thank you. If the damage is confirmed we will replace or refund your order.

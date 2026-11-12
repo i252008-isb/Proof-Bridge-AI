@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 922d7f1f9fe314bf335be4e70c8ea2e47fdc1196 huzaifa-sh <asxendc2211@gmail.com> 1794477602 +0500	commit (initial): Baseline before product pivot
+922d7f1f9fe314bf335be4e70c8ea2e47fdc1196 922d7f1f9fe314bf335be4e70c8ea2e47fdc1196 huzaifa-sh <asxendc2211@gmail.com> 1794477603 +0500	checkout: moving from main to product-pivot
+922d7f1f9fe314bf335be4e70c8ea2e47fdc1196 e524684807a676f45b721895815aa88547e86435 huzaifa-sh <asxendc2211@gmail.com> 1794484649 +0500	commit: feat(backend): implement payment endpoints (create, capture, get) and tests
+e524684807a676f45b721895815aa88547e86435 ff7bda255cbddda7c3a1d5cee9697320584c2420 huzaifa-sh <asxendc2211@gmail.com> 1794485171 +0500	commit: feat(frontend): add Pay with PayPal button, payment status card, return and cancel routes
+ff7bda255cbddda7c3a1d5cee9697320584c2420 b3334bac9d9ef77bdcd9f67deecbabd14b918d17 huzaifa-sh <asxendc2211@gmail.com> 1794485451 +0500	commit: feat(paypal): implement refund_capture function, refund_capture.py CLI, and offline tests
+b3334bac9d9ef77bdcd9f67deecbabd14b918d17 c18dc87c867dd77d884c7a9b0cfd0d89d2e70fdd huzaifa-sh <asxendc2211@gmail.com> 1794485573 +0500	commit: feat(ui): relabel visible UI text for product buyer/seller and customer support pivot

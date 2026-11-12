@@ -1,0 +1,419 @@
+{
+  "schema_version": "2.0",
+  "case_id": "CASE-DEMO-2026",
+  "report_title": "ProofBridge AI — Customer Support Case Investigation Report",
+  "generated_at": "2026-11-09T20:12:17.697605Z",
+  "case_overview": {
+    "case_id": "CASE-DEMO-2026",
+    "issue_type": "damaged_product",
+    "product_name": "SonicWave Pro Wireless Headphones",
+    "requested_resolution": "refund",
+    "complaint_summary": "My order ORD-DEMO-2026 arrived damaged: the left ear cup is cracked. I contacted the seller and I want a refund.",
+    "created_at": null
+  },
+  "customer_complaint": "My order ORD-DEMO-2026 arrived damaged: the left ear cup is cracked. I contacted the seller and I want a refund.",
+  "product_information": "Product: SonicWave Pro Wireless Headphones",
+  "requested_resolution": "refund",
+  "customer_claims": [
+    {
+      "id": "claim-1",
+      "claim": "My order ORD-DEMO-2026 arrived damaged: the left ear cup is cracked.",
+      "source": "customer_ticket",
+      "verification_status": "supported",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": "The order number stated in this claim (ORD-DEMO-2026) matches the order number found in the supplied documents."
+    },
+    {
+      "id": "claim-2",
+      "claim": "I contacted the seller and I want a refund.",
+      "source": "customer_ticket",
+      "verification_status": "insufficient_evidence",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "rationale": "No evidence relevant to this claim was found among the supplied evidence items."
+    }
+  ],
+  "purchase_and_order_information": [
+    {
+      "evidence_id": "EVD-1",
+      "seller_name": null,
+      "product_name": null,
+      "product_model": null,
+      "order_number": "ORD-DEMO-2026",
+      "purchase_date": "2026-11-05T00:00:00",
+      "price": 49.99,
+      "currency": "USD",
+      "quantity": null,
+      "extraction_warnings": []
+    }
+  ],
+  "order_information": null,
+  "payment_information": null,
+  "evidence_inventory": [
+    {
+      "evidence_id": "EVD-1",
+      "filename": "receipt.txt",
+      "kind": "text",
+      "status": "processed",
+      "category": "purchase_record",
+      "evidence_type": null,
+      "uploaded_by": "customer",
+      "uploaded_at": null,
+      "summary": "Text evidence: extracted text begins: \"SONICWAVE STORE - Receipt\nOrder #ORD-DEMO-2026\nDate: November 5, 2026\nProduct: SonicWave Pro Wireless Headphones (model SW-PRO-X)\nQuantity: 1\nTotal: $49.99\nPayment: card ending 1234\"",
+      "identified_facts": [
+        "Contains an invoice/reference number: Order #ORD-DEMO-2026",
+        "Contains a date: November 5, 2026",
+        "Contains a currency amount: $49.99"
+      ],
+      "extraction_warning_codes": []
+    },
+    {
+      "evidence_id": "EVD-2",
+      "filename": "product_listing.txt",
+      "kind": "text",
+      "status": "processed",
+      "category": "product_listing",
+      "evidence_type": null,
+      "uploaded_by": "customer",
+      "uploaded_at": null,
+      "summary": "Text evidence: extracted text begins: \"SonicWave Pro Wireless Headphones - Product Listing\nModel: SW-PRO-X\nOver-ear wireless headphones, matte black, foldable, 40h battery.\nIncluded: carrying case, USB-C cable, 3.5mm aux cable.\"",
+      "identified_facts": [],
+      "extraction_warning_codes": []
+    },
+    {
+      "evidence_id": "EVD-3",
+      "filename": "seller_chat.txt",
+      "kind": "text",
+      "status": "processed",
+      "category": "conversation",
+      "evidence_type": null,
+      "uploaded_by": "customer",
+      "uploaded_at": null,
+      "summary": "Text evidence: extracted text begins: \"customer: Hi, my headphones arrived and the left ear cup is cracked.\nseller: Hello! Sorry to hear that. Could you send a photo of the damage?\ncustomer: Sure, photo attached.\nseller: Thank you. ...\"",
+      "identified_facts": [],
+      "extraction_warning_codes": []
+    },
+    {
+      "evidence_id": "EVD-4",
+      "filename": "delivery_record.txt",
+      "kind": "text",
+      "status": "processed",
+      "category": "delivery_record",
+      "evidence_type": null,
+      "uploaded_by": "customer",
+      "uploaded_at": null,
+      "summary": "Text evidence: extracted text begins: \"Delivery record\nOrder #ORD-DEMO-2026\nDelivered: November 5, 2026\nCarrier: ShipFast\nTracking: TRK-98765\"",
+      "identified_facts": [
+        "Contains an invoice/reference number: Order #ORD-DEMO-2026",
+        "Contains a date: November 5, 2026"
+      ],
+      "extraction_warning_codes": []
+    }
+  ],
+  "ocr_findings": [],
+  "visual_analysis": [
+    {
+      "evidence_id": "EVD-5",
+      "reference_evidence_id": null,
+      "analysis_type": "visual_inspection",
+      "status": "analyzed",
+      "visual_observations": [
+        {
+          "observation": "A visible crack along the left ear cup",
+          "confidence": 0.9,
+          "possible_issue": null
+        }
+      ],
+      "image_quality": "sufficient",
+      "possible_issues": [],
+      "limitations": [],
+      "warnings": [],
+      "requires_human_review": true,
+      "source": "heuristic",
+      "provider_name": "none"
+    }
+  ],
+  "conversation_analysis": [
+    {
+      "evidence_id": "EVD-3",
+      "messages": [
+        {
+          "speaker": "customer",
+          "message": "Hi, my headphones arrived and the left ear cup is cracked.",
+          "timestamp": null,
+          "source_reference": "line 1"
+        },
+        {
+          "speaker": "seller",
+          "message": "Hello! Sorry to hear that. Could you send a photo of the damage?",
+          "timestamp": null,
+          "source_reference": "line 2"
+        },
+        {
+          "speaker": "customer",
+          "message": "Sure, photo attached.",
+          "timestamp": null,
+          "source_reference": "line 3"
+        },
+        {
+          "speaker": "seller",
+          "message": "Thank you. If the damage is confirmed we will replace or refund your order.",
+          "timestamp": null,
+          "source_reference": "line 4"
+        }
+      ],
+      "customer_statements": [
+        "Hi, my headphones arrived and the left ear cup is cracked.",
+        "Sure, photo attached."
+      ],
+      "seller_statements": [
+        "Hello! Sorry to hear that. Could you send a photo of the damage?",
+        "Thank you. If the damage is confirmed we will replace or refund your order."
+      ],
+      "refund_promises": [
+        "Thank you. If the damage is confirmed we will replace or refund your order."
+      ],
+      "acknowledgements": [
+        "Hello! Sorry to hear that. Could you send a photo of the damage?"
+      ],
+      "reported_complaint_dates": [],
+      "contradictions": [],
+      "warnings": [],
+      "source": "heuristic",
+      "provider_name": "heuristic",
+      "requires_human_review": true
+    }
+  ],
+  "refund_policy_summary": {
+    "policy_id": "policy-demo",
+    "policy_name": "SonicWave Store Refund Policy",
+    "rule_count": 3,
+    "rule_summaries": [
+      "Items may be returned within 30 days of purchase.",
+      "Items that arrive damaged may be replaced or refunded when photographic proof of the damage is provided.",
+      "A refund requires the original receipt."
+    ],
+    "extraction_warnings": [
+      "No non-mock LLM provider is configured; deterministic heuristic policy extraction was used."
+    ]
+  },
+  "cross_source_verification": [
+    {
+      "id": "finding-1",
+      "field": "order_id",
+      "status": "supported",
+      "observed_values": [
+        {
+          "value": "ORD-DEMO-2026",
+          "source": "customer ticket",
+          "evidence_id": null
+        },
+        {
+          "value": "ORD-DEMO-2026",
+          "source": "receipt",
+          "evidence_id": "EVD-1"
+        }
+      ],
+      "rationale": "All available sources agree on the order number: customer ticket (ORD-DEMO-2026), receipt (ORD-DEMO-2026).",
+      "supporting_evidence_ids": [
+        "EVD-1"
+      ],
+      "contradicting_evidence_ids": [],
+      "requires_human_review": true
+    },
+    {
+      "id": "finding-2",
+      "field": "purchase_date",
+      "status": "supported",
+      "observed_values": [
+        {
+          "value": "2026-11-05 20:12:17.485607+00:00",
+          "source": "customer ticket",
+          "evidence_id": null
+        },
+        {
+          "value": "2026-11-05 00:00:00",
+          "source": "receipt",
+          "evidence_id": "EVD-1"
+        }
+      ],
+      "rationale": "All available sources agree on the purchase date: customer ticket (2026-11-05 20:12:17.485607+00:00), receipt (2026-11-05 00:00:00).",
+      "supporting_evidence_ids": [
+        "EVD-1"
+      ],
+      "contradicting_evidence_ids": [],
+      "requires_human_review": true
+    }
+  ],
+  "supporting_findings": [
+    {
+      "claim_id": "claim-1",
+      "claim": "My order ORD-DEMO-2026 arrived damaged: the left ear cup is cracked.",
+      "source": "customer_ticket",
+      "status": "supported",
+      "confidence": 1.0,
+      "rationale": "The order number stated in this claim (ORD-DEMO-2026) matches the order number found in the supplied documents.",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "cited_passages": [],
+      "similarity_scores": [
+        {
+          "evidence_id": "EVD-3",
+          "score": 0.4392,
+          "method": "embeddings"
+        },
+        {
+          "evidence_id": "EVD-4",
+          "score": 0.3044,
+          "method": "embeddings"
+        },
+        {
+          "evidence_id": "EVD-1",
+          "score": 0.0915,
+          "method": "embeddings"
+        }
+      ],
+      "analysis_method": "heuristic",
+      "requires_human_review": true,
+      "source_kind": "heuristic"
+    },
+    {
+      "claim_id": "claim-2",
+      "claim": "I contacted the seller and I want a refund.",
+      "source": "customer_ticket",
+      "status": "insufficient_evidence",
+      "confidence": 1.0,
+      "rationale": "No evidence relevant to this claim was found among the supplied evidence items.",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "cited_passages": [],
+      "similarity_scores": [
+        {
+          "evidence_id": "EVD-3",
+          "score": 0.3321,
+          "method": "embeddings"
+        }
+      ],
+      "analysis_method": "heuristic",
+      "requires_human_review": true,
+      "source_kind": "heuristic"
+    }
+  ],
+  "contradictions": [],
+  "missing_information": [
+    {
+      "id": "missing-claim-2",
+      "description": "No evidence relevant to the claim 'I contacted the seller and I want a refund.' was found.",
+      "recommended_evidence": [
+        "Receipt or order confirmation",
+        "Product photographs",
+        "Seller conversation export"
+      ]
+    }
+  ],
+  "policy_assessment": {
+    "policy_id": "policy-demo",
+    "policy_name": "SonicWave Store Refund Policy",
+    "status": "evaluated",
+    "rule_assessments": [
+      {
+        "rule_id": "policy-demo-rule-1",
+        "condition": "Items may be returned within 30 days of purchase.",
+        "category": "return_window",
+        "assessment": "met",
+        "evidence_ids": [
+          "EVD-1"
+        ],
+        "explanation": "The purchase date (2026-11-05) is 5 day(s) before the reference date, within the stated 30-day window.",
+        "source_quote": "Items may be returned within 30 days of purchase."
+      },
+      {
+        "rule_id": "policy-demo-rule-2",
+        "condition": "Items that arrive damaged may be replaced or refunded when photographic proof of the damage is provided.",
+        "category": "damaged_on_arrival",
+        "assessment": "met",
+        "evidence_ids": [
+          "EVD-5"
+        ],
+        "explanation": "The customer photograph shows visually observable irregularities consistent with this rule's condition.",
+        "source_quote": "Items that arrive damaged may be replaced or refunded when photographic proof of the damage is provided."
+      },
+      {
+        "rule_id": "policy-demo-rule-3",
+        "condition": "A refund requires the original receipt.",
+        "category": "proof_requirement",
+        "assessment": "met",
+        "evidence_ids": [
+          "EVD-1",
+          "EVD-5"
+        ],
+        "explanation": "Proof types required by the rule: receipt/invoice. Supplied: receipt/invoice.",
+        "source_quote": "A refund requires the original receipt."
+      }
+    ],
+    "unmet_conditions": [],
+    "missing_information": [],
+    "warnings": [
+      {
+        "code": "llm_unavailable_heuristic_used",
+        "message": "No non-mock LLM provider is configured; deterministic heuristic policy extraction was used.",
+        "page_number": null
+      }
+    ],
+    "explanation": "Evaluated 3 policy rule(s) against the available case information: 3 met, 0 partially met, 0 not met, 0 not deterministically assessable. No missing information was identified.",
+    "requires_human_review": true
+  },
+  "recommended_outcome": "refund_recommended",
+  "recommendation_reasoning": "All evaluable policy conditions were met, and the customer requested a refund. The AI recommends a refund as the supported outcome; an authorized human agent must make the final decision. The conversation analysis also recorded statements suggesting the seller promised a refund.",
+  "recommendation": {
+    "outcome": "refund_recommended",
+    "reasoning": "All evaluable policy conditions were met, and the customer requested a refund. The AI recommends a refund as the supported outcome; an authorized human agent must make the final decision. The conversation analysis also recorded statements suggesting the seller promised a refund.",
+    "supporting_evidence_ids": [
+      "EVD-1",
+      "EVD-5"
+    ],
+    "contradicting_evidence_ids": [],
+    "missing_information": [],
+    "relevant_policy_rule_ids": [
+      "policy-demo-rule-1",
+      "policy-demo-rule-2",
+      "policy-demo-rule-3"
+    ],
+    "confidence": 0.7,
+    "requires_human_review": true
+  },
+  "evidence_references": [
+    "EVD-1 — receipt.txt",
+    "EVD-2 — product_listing.txt",
+    "EVD-3 — seller_chat.txt",
+    "EVD-4 — delivery_record.txt"
+  ],
+  "timeline": [
+    {
+      "event_type": "purchase_date",
+      "description": "Purchase date stated in the customer ticket.",
+      "timestamp": "2026-11-05T20:12:17.485607Z",
+      "source": "customer_ticket"
+    }
+  ],
+  "neutral_summary": "Case CASE-DEMO-2026: the customer reported issue type damaged_product and requested refund. 4 evidence item(s) were analyzed; 0 contradiction(s) and 1 missing-information item(s) were identified. Recommended outcome: refund_recommended. A human support agent must make the final decision.",
+  "limitations": [
+    "The configured LLM provider is a mock: LLM-based extractions and summaries are deterministic heuristics, not model output.",
+    "Evidence item 'EVD-5' ('damaged_photo.png') could not be processed (OCRNotAvailableError); the investigation continued with the remaining evidence.",
+    "Relevance scores were computed with the mock embeddings provider: they are deterministic approximations, not genuine semantic analysis.",
+    "This sample report was generated for documentation with a clearly labeled scripted vision simulation; it is not the output of a real vision model."
+  ],
+  "human_review_required": true,
+  "final_decision_notice": "This is an AI-generated investigation recommendation. An authorized human support agent must make the final decision.",
+  "status_counts": {
+    "supported": 1,
+    "insufficient_evidence": 1
+  },
+  "unresolved_evidence_ids": [],
+  "source_summary": {
+    "llm_count": 0,
+    "heuristic_count": 7
+  },
+  "generation_method": "heuristic"
+}

@@ -1,0 +1,5 @@
+# Person 3 AI module. Its pyproject.toml declares the runtime dependencies
+# (numpy, PyMuPDF, python-docx, Pillow, pydantic, pydantic-settings, httpx).
+# Install after requirements.txt:
+#   pip install -r requirements-ai.txt
+-e ./ai_module/ai_module
